@@ -1,0 +1,109 @@
+.App-logo {
+    height: 7rem;
+    width: 7rem;
+    pointer-events: none;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 25px;
+    margin-bottom: 20px;
+}
+  
+@media (prefers-reduced-motion: no-preference) {
+.App-logo {
+    animation: App-logo-spin infinite 20s linear;
+    }
+}
+
+@keyframes App-logo-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* body {
+    margin: 0;
+    font-family: "Lato", sans-serif;
+  } */
+  
+  .sidebar {
+    margin: 25 0 0 0;
+    padding: 0;
+    width: 200px;
+    background-color: #f1f1f1;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+    text-align: center;
+  }
+  
+  .sidebar a {
+    display: block;
+    text-align: center;
+    color: black;
+    padding: 16px;
+    text-decoration: none;
+  }
+  
+  .sidebar a.active {
+    background-color: #2e4555;
+    color: white;
+  }
+  
+  .sidebar a:hover:not(.active) {
+    background-color: #555;
+    color: white;
+  }
+  
+  div.content {
+    margin-left: 200px;
+    padding: 64px 64px;
+    height: 1000px;
+  }
+  
+  @media screen and (max-width: 700px) {
+    .sidebar {
+      width: 100%;
+      height: auto;
+      position: relative;
+    }
+    .sidebar a {
+      float: left;
+    }
+    div.content {
+      margin-left: 0;
+      padding: 0 0;
+    }
+  }
+  
+  @media screen and (max-width: 400px) {
+    .sidebar a {
+      text-align: center;
+      float: none;
+    }
+  }
+  
+#myCanvas {
+  background-image: url("../../assets/Plan.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+table {
+  /* font-family: arial, sans-serif; */
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #3e586b;
+}

@@ -1,0 +1,63 @@
+PI SETUP
+1. Enable VNC
+2. Enable Wifi
+3. Change GPU memory to 256
+4. Change Password
+5. Static IP
+sudo nano /etc/dhcpcd.conf
+
+interface eth0
+static ip_address=192.168.0.10/24
+static router=192.168.0.1
+static domain_name_servers=192.168.0.1
+8.8.8.8
+8.8.4.4
+2001:4860:4860::8888
+2001:4860:4860::8844
+
+MYSQL INSTALLATION
+sudo apt update
+sudo apt upgrade
+sudo apt install mariadb-server
+sudo mysql_secure_installation
+sudo nano /etc/mysql/mariadb.conf.d/50-server.cnf
+#bind-address            = 127.0.0.1
+
+sudo mysql -u root -p
+create database tmdb;
+create table users(
+id INT,
+name VARCHAR(100),
+device VARCHAR(17) PRIMARY KEY,
+heartrate INT
+);
+create table pi3(
+id INT AUTO_INCREMENT PRIMARY KEY,
+device VARCHAR(17),
+rssi INT
+);
+CREATE TABLE pis (
+id INT AUTO_INCREMENT PRIMARY KEY,
+pi VARCHAR(100),
+watch VARCHAR(100),
+rssi INT,
+updatetime TIME
+);
+create table online(
+device VARCHAR(17) PRIMARY KEY,
+online BIT
+);
+
+CREATE USER 'admin'@'%' IDENTIFIED BY 'admin1234';
+GRANT ALL PRIVILEGES ON tmdb.* TO 'admin'@'%';
+FLUSH PRIVILEGES;
+
+INSERT INTO users (id, name, device)
+VALUES ('00000', 'user1', '98:28:A6:D4:6F:0E');
+
+
+NODEJS INSTALLATION
+https://github.com/nodesource/distributions
+
+curl -fsSL https://deb.nodesource.com/setup_15.x | sudo -E bash -
+sudo apt-get install -y nodejs
